@@ -1,38 +1,70 @@
 import React from 'react'
 
-export default function Form(props){
-    const {
-        values
-    } = props;
+export default function Form(){
+    // const {
+    //     disabled,
+    //     values
+    // } = props;
 
-    const onSubmit(){
-        return;
-    }
-    const onChange(){
-        return;
-    }
+    // const onSubmit = (e)=>{
+    //     e.preventDefault()
+    //     return;
+    // }
+    // const onChange= (e)=>{
+    //     console.log(e.target);
+    //     const {name, value} = e.target;
+    //     return;
+    // }
 
 
 
 
     return (
-        <div className="onboardingForm">
+        <div className="form container">
             <form>
-
-                <label>Hello, My Name Is ___</label><br/>
+                <label><h2>Hello, My Name Is ___</h2></label>
                 <input
-                    name="name"
-                    type="text"
-                    value={values.name}
-                    onchange={onChange}
+                    name = "first_name"
+                    type = "text"
+                    placeholder = "First Name"
                 />
-
+                <input
+                    name = "last_name"
+                    type = "text"
+                    placeholder = "Last Name"
+                /> <br/>
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="email@address.com"
+                />
+                <input
+                    name="pass"
+                    type="password"
+                    placeholder="Enter secure password."
+                /><br/>
+                <label>
+                <input 
+                    className = "tos"
+                    name="tos"
+                    type="checkbox"
+                    
+                />     &nbsp; &nbsp;    I agree to the terms and services of this website.</label><br/>
+                <label>
+                <input
+                    name="tos"
+                    type="checkbox"
+                    
+                /> &nbsp; I agree to receive emails and newsletters from this website.</label>
+            <div className="submit">
+                <button disabled={true}>==> proceed</button>
+            </div>
             </form>
         </div>
     )
-    // - [ ] Name (first_name, last_name)
-    // - [ ] Email
-    // - [ ] Password
+    // - [ x ] Name (first_name, last_name)
+    // - [ x ] Email
+    // - [ x ] Password
     // - [ ] Terms of Service (checkbox)
     // - [ ] A Submit button to send our form data to the server.
 }
